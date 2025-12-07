@@ -97,7 +97,6 @@ CREATE PROCEDURE Adventure.CreateBooking
 AS
 BEGIN
     INSERT INTO Adventure.BOOKING (
-        BookingID,
         BookingDate,
         NoOfParticipate,
         Status,
@@ -106,7 +105,6 @@ BEGIN
         OfferingID
     )
     VALUES (
-        @BookingID,
         @BookingDate,
         @NoOfParticipate,
         @Status,
