@@ -4,7 +4,7 @@ GO
 --SUPERTYPE--
 
 CREATE TABLE Adventure.[USER] (
-    UserID INT PRIMARY KEY,
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
     Fname NVARCHAR(50) NOT NULL,
     Lname NVARCHAR(50) NOT NULL,
     DOB DATE NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE Adventure.INSTRUCTOR (
 --SUPERTYPE--
 
 CREATE TABLE Adventure.ACTIVITY (
-    ActivityID INT PRIMARY KEY,
+    ActivityID INT IDENTITY(1,1) PRIMARY KEY,
     ActivityName NVARCHAR(100) NOT NULL,
     Description NVARCHAR(255),
     MinAge INT NOT NULL,
@@ -88,7 +88,7 @@ CREATE TABLE Adventure.AIR_SPORT (
 --SUPERTYPE--
 
 CREATE TABLE Adventure.LOCATION (
-    LocationID INT PRIMARY KEY,
+    LocationID INT IDENTITY(1,1) PRIMARY KEY,
     LocationName NVARCHAR(100),
     Address NVARCHAR(255),
     Country NVARCHAR(50),
@@ -101,7 +101,6 @@ CREATE TABLE Adventure.LOCATION (
 CREATE TABLE Adventure.INDOOR (
     LocationID INT PRIMARY KEY,
     FacilityType NVARCHAR(50),
-    Capacity INT,
 
     CONSTRAINT FK_Indoor_Location
         FOREIGN KEY (LocationID)
@@ -121,7 +120,7 @@ CREATE TABLE Adventure.OUTDOOR (
 ---------------------------
 
 CREATE TABLE Adventure.CERTIFICATION (
-    CertificationID INT PRIMARY KEY,
+    CertificationID INT IDENTITY(1,1) PRIMARY KEY,
     CertificationName NVARCHAR(100),
     ValidFrom DATE,
     ValidTo DATE
@@ -129,7 +128,7 @@ CREATE TABLE Adventure.CERTIFICATION (
 ----------------------------
 
 CREATE TABLE Adventure.OFFERING (
-    OfferingID INT PRIMARY KEY,
+    OfferingID INT IDENTITY(1,1) PRIMARY KEY,
     Price DECIMAL(10,2) NOT NULL,
     StartTime TIME NOT NULL,
     EndTime TIME NOT NULL,
@@ -150,7 +149,7 @@ CREATE TABLE Adventure.OFFERING (
 -------------------------
 
 CREATE TABLE Adventure.BOOKING (
-    BookingID INT PRIMARY KEY,
+    BookingID INT IDENTITY(1,1) PRIMARY KEY,
     BookingDate DATE NOT NULL,
     NoOfParticipate INT NOT NULL,
     Status NVARCHAR(50),
